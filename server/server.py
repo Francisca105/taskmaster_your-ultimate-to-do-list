@@ -1,11 +1,20 @@
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, jsonify
 app = Flask(__name__)
 
 from db import read_notes, create_note, update_note, delete_note
 
 @app.route("/")
 def get_all():
-    return read_notes()
+    notes = read_notes()
+    json_data = [
+        {
+            "id": id,
+            "note": note,
+            "status": status,
+            "date": date.isoformat()
+        }
+        for id, note, status, date in notes]
+    return jsonify(json_data)
 
 @app.route("/create", methods=["POST"])
 def create():
