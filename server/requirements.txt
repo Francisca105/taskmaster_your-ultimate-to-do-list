@@ -6,3 +6,6 @@ Flask==3.0.3
 
 # PostgreSQL Database
 psycopg2-binary==2.9.9
+
+# Dotenv
+python-dotenv==1.0.1
