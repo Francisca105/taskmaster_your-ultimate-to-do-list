@@ -1,24 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import Header from './Header'
+import Add from './Add'
+import Task from './Task'
+import Footer from './Footer'
+
 import './App.css';
 
+const api = 'http://localhost:5000/'
+interface TaskData {
+  id: number;
+  task: string;
+  status: boolean;
+  date: string;
+}
+
 function App() {
+  const [tasks, setTasks] = useState<TaskData[]>([]);
+
+  useEffect(() => {
+    try {
+      fetch(api + 'tasks')
+      .then(res => res.json())
+      .then(data => {
+        setTasks(data)
+      }) 
+    } catch (error) {
+      console.error(error)
+    }
+  }, []);
+
+  console.log(tasks)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="main">
+        <h1>Create a new Task</h1>
+        <Add api={api}/>
+      </div>
+      <br style={{ marginBottom: '50px' }}/>
+      <div>
+        <h2>TO-DO LIST</h2>
+        {tasks.map(task => (
+          <Task key={task.id} id={task.id} task={task.task} date={task.date} status={task.status} api={api}/>
+        ))}
+      </div>
+      <Footer />
     </div>
   );
 }
