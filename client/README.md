@@ -4,7 +4,8 @@
 
 Before jumping to the code I designed a small sketch to have an idea...
 
-![](https://github.com/Francisca105/taskmaster_your-ultimate-to-do-list/blob/main/images/frontend.jgg?raw=true)
+![image](https://github.com/Francisca105/taskmaster_your-ultimate-to-do-list/assets/65908870/713332c6-4982-4fed-b833-699bc002f5a1)
+
 
 ## Getting Started
 
