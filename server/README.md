@@ -59,6 +59,8 @@ Before running the server, make sure you have the following installed:
    DB_HOST=localhost
    DB_PORT=5432
    ```
+### Database Scheme
+   ![Database Scheme](https://github.com/Francisca105/taskmaster_your-ultimate-to-do-list/blob/main/images/db.png?raw=true)
 
 ## Running the Server
 
