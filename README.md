@@ -6,6 +6,10 @@ Welcome to Taskmaster, your ultimate to-do list application built to help you or
 
 Taskmaster is a web-based to-do list application developed using modern web technologies such as React.js for the frontend and Flask for the backend. It offers a seamless user experience with features like task creation, deletion, updating, and marking tasks as completed.
 
+### DEMO
+
+Checkout the demo [here](https://app.arcade.software/share/40H9Ytuc25sdgdBq1GRD)!
+
 ## Getting Started
 
 To get started with Taskmaster, you'll need to set up both the frontend and backend components. Follow the setup guides provided in the respective README files:

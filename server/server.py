@@ -47,7 +47,7 @@ def create():
 def update(id):
     data = request.get_json()
     task = data.get("task")
-    return jsonify(verify_task(task))
+    return jsonify(verify_task(update_task(id, task)))
 
 @app.route("/status/<int:id>")
 def status(id):
